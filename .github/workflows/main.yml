@@ -34,5 +34,6 @@ jobs:
       - uses: jakejarvis/s3-sync-action@master
       - run: aws s3 sync build s3://${{ secrets.AWS_S3_BUCKET_NAME }}/latest
         env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_NAME }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCCESS_KEY: ${{ secrets.AWS_SECRET_ACCCESS_KEY }}
